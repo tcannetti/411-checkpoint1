@@ -50,18 +50,18 @@ export default function Dashboard(){
     <Container >
 
      { /* Header */}
-      <Typography variant="h4">
-        Welcome to the Music App, it doesn't look nice but it works
+      <Typography variant="h3">
+        Welcome to the Music App
       </Typography>
 
       {/* Online Card */}
       <Container >
         <Card >
           <CardContent>
-            <Typography variant="h2">
+            <Typography variant="h6">
               Online Mode
             </Typography>
-            <Typography variant="h5">
+            <Typography variant="body1">
               Is the app connected to the internet?
             </Typography>
           </CardContent>
@@ -74,10 +74,10 @@ export default function Dashboard(){
 
     {/* VOLUME CARD */}
       <Card >
-        <Typography variant="h2">
+        <Typography variant="h6">
           Master Volume
         </Typography>
-        <Typography variant="h5">
+        <Typography variant="body1">
           Overrides all other sound settings in this application. 
         </Typography>
         <CardActions>
@@ -95,10 +95,10 @@ export default function Dashboard(){
     {/* Sound Quality card */}
     <Card >
       <CardContent>
-        <Typography variant="h2">
+        <Typography variant="h6">
           Sound Quality
         </Typography>
-        <Typography>
+        <Typography variant="body1">
           Manually Control the Sound in the event of poor connection. 
         </Typography>
       </CardContent>

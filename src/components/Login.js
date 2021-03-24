@@ -14,10 +14,10 @@ const useStyle = makeStyles({
     flexDirection: 'column',
     borderRadius: 3,
     marginTop: '10px',
-    width: "300px"
+    width: "360px"
   },
   button: {
-    marginTop: '20px'
+    marginTop: '60px'
   }
 });
 
@@ -29,7 +29,7 @@ export default function Login(props) {
     <Container className={classes.root}>
       <TextField label="Username"/>
       <TextField label="Password"/>
-      <Button onClick={props.loginFunc} className={classes.button} variant="contained" color="secondary"></Button>
+      <Button onClick={props.loginFunc} className={classes.button} variant="contained" color="primary"></Button>
     </Container>
   )
 }
