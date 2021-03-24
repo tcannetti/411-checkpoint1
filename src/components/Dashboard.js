@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { Card, CardActions, CardContent, Container, MenuItem, Slider, Switch, Select, Typography } from "@material-ui/core"
 // import { VolumeUp, VolumeDown } from "@material-ui/icons"
 
-import { makeStyles } from 'react'
-// import classes from '*.module.css'
+import { makeStyles } from '@material-ui/core/styles'
 
 // const useStyle = makeStyles({
 //   root: {
@@ -12,28 +11,25 @@ import { makeStyles } from 'react'
 //       flexDirection: 'column',
 //       maxWidth: '1024px'
 //   },
-//   container: {
-//       display: 'flex',
-//       justifyContent: 'space-between',
-//       flexWrap: 'wrap'
-//   },
-//   card: {
-//       maxWidth: '275px',
-//       marginTop: '20px'
-//   },
-//   system: {
-//       marginTop: "20px"
-//   }
-// })
+const useStyle = makeStyles({
+  root: {
+    display: 'flex',
+    flexDirection: 'row',
+    borderRadius: 3,
+    marginTop: '40px',
+    maxwidth: "1024px"
+  }
+});
 
 export default function Dashboard(){
+  const classes = useStyle();
   /* Values for state */
-  const [isConnected, setIsConnected] = useState(true)
+  const [isConnected, setIsConnected] = useState(false)
   const [volumeLvl, setVolumeLvl] = useState(50)
   const [soundQual, setSoundQual] = useState('2')
 
   const handleChange = (event) => {
-    event.target.checked ? isConnected(true) : setIsConnected(false)
+    setIsConnected(event.target.checked)
   }
 
   const changeVol = (event, newVol) => {
@@ -47,13 +43,15 @@ export default function Dashboard(){
   // const classes = useStyle();
 
   return(
-    <Container >
+    <Container>
 
      { /* Header */}
       <Typography variant="h3">
         Welcome to the Music App
       </Typography>
 
+      {/* div to wrap it all for style */}
+      <div className={classes.root}>
       {/* Online Card */}
       <Container >
         <Card >
@@ -110,6 +108,7 @@ export default function Dashboard(){
         </Select>
       </CardActions>
     </Card>
+    </div>
     {/* NOTIFICATION CARD */}
     <Typography>
       SYSTEM NOTIFICATIONS:
